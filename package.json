@@ -1,0 +1,23 @@
+{
+  "name": "timestamp-microservice",
+  "version": "0.0.1",
+  "description": "Takes a string as a parameter and checks to see whether it contains a UNIX timestamp or a natural language date",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gp22/timestamp-microservice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gp22/timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/gp22/timestamp-microservice#readme",
+  "dependencies": {
+    "@augmt/timestamp-microservice": "^0.2.4",
+    "express": "^4.14.0"
+  }
+}
