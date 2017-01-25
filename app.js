@@ -1,5 +1,6 @@
 var express = require('express');
-var timestamp = require('@augmt/timestamp-microservice');
+var moment = require('moment');
+// var timestamp = require('@augmt/timestamp-microservice');
 var app = express();
 
 // console.log(timestamp);
@@ -13,7 +14,16 @@ app.get('/', function(req, res) {
 
 app.get('/:datevalue', function(req, res) {
     var datevalue = req.params.datevalue;
-    console.log('datevalue is ' + datevalue);
+    // check for valid date in datevalue
+    if (moment(datevalue).isValid()) {
+      res.send(moment(datevalue).format('MMMM Do YYYY'));
+    }
+
+    var response = {
+      "unix": 1450137600,
+      "natural": "December 15, 2015"
+    };
+    // res.send(moment.unix(datevalue).isValid());
 });
 
 app.listen(3000, function() {
