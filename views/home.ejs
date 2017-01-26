@@ -1,16 +1,21 @@
 <% include partials/header %>
 
-<div class='container'>
-  <div class='row'>
-  <div class='col s12'>
-    <h1>Timestamp microservice</h1>
-  </div>
-  <div class='col s12 l11 offset-l1'>
-    <p>When you pass a string as a parameter, it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).</p>
-    <p>If it does, it returns both the Unix timestamp and the natural language form of that date.</p>
-    <p>If it does not contain a date or Unix timestamp, it returns null for those properties.</p>
-  </div>
-  </div>
+<div class='blue darken-2 z-depth-2'>
+    <h1 class='white-text'>Timestamp microservice</h1>
+</div>
+<div>
+    <p>The timestamp microservice provides two basic functions when it is passed a string as a parameter:</p>
+    <UL>
+      <li>It will check to see whether the string contains either a unix timestamp or a natural language date (example: January 1, 2016).</li>
+      <li>If it contains either one of those two things it returns both the Unix timestamp and the natural language form of the date in JSON format.</li>
+      <li>If it does not contain a date or Unix timestamp it returns null for both those properties in JSON format.</li>
+    </UL>
+</div>
+<div>
+  <h3>Example usage</h3>
+  <pre>URL                                  Returns</pre>
+  <pre>www.example.com/December 12 2017     {"unix":1513036800,"natural":"December 12, 2017"}</pre>
+  <pre>www.example.com/1513036800           {"unix":1513036800,"natural":"December 12, 2017"}</pre>
 </div>
 
 <% include partials/footer %>
