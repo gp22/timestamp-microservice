@@ -43,6 +43,9 @@ app.get('/:datevalue', function(req, res) {
     }
 });
 
-app.listen(3000, function() {
-    console.log('App listening on port 3000');
-});
+// app.listen(3000, function() {
+//     console.log('App listening on port 3000');
+// });
+
+// use process.env.PORT for compatibility with heroku
+app.listen(process.env.PORT || 3000);
